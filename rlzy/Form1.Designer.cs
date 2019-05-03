@@ -142,24 +142,26 @@
             this.工资管理ToolStripMenuItem.Name = "工资管理ToolStripMenuItem";
             this.工资管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.工资管理ToolStripMenuItem.Text = "考勤管理";
+            this.工资管理ToolStripMenuItem.Click += new System.EventHandler(this.工资管理ToolStripMenuItem_Click);
             // 
             // 维护考勤数据ToolStripMenuItem
             // 
             this.维护考勤数据ToolStripMenuItem.Name = "维护考勤数据ToolStripMenuItem";
-            this.维护考勤数据ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.维护考勤数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.维护考勤数据ToolStripMenuItem.Text = "维护考勤数据";
             this.维护考勤数据ToolStripMenuItem.Click += new System.EventHandler(this.维护考勤数据ToolStripMenuItem_Click);
             // 
             // 批量录入考勤数据ToolStripMenuItem
             // 
             this.批量录入考勤数据ToolStripMenuItem.Name = "批量录入考勤数据ToolStripMenuItem";
-            this.批量录入考勤数据ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.批量录入考勤数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.批量录入考勤数据ToolStripMenuItem.Text = "批量录入考勤数据";
+            this.批量录入考勤数据ToolStripMenuItem.Click += new System.EventHandler(this.批量录入考勤数据ToolStripMenuItem_Click);
             // 
             // 显示考勤数据ToolStripMenuItem
             // 
             this.显示考勤数据ToolStripMenuItem.Name = "显示考勤数据ToolStripMenuItem";
-            this.显示考勤数据ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.显示考勤数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.显示考勤数据ToolStripMenuItem.Text = "显示考勤数据";
             // 
             // 资金管理ToolStripMenuItem
@@ -234,8 +236,8 @@
             this.考勤管理ToolStripMenuItem,
             this.社保管理ToolStripMenuItem,
             this.工资管理ToolStripMenuItem,
-            this.资金管理ToolStripMenuItem,
             this.系统管理ToolStripMenuItem,
+            this.资金管理ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
