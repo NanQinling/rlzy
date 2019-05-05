@@ -17,7 +17,7 @@ namespace rlzy
         //Form1 f1;
         public frmSalary f3;
         public frmImport f4;
-
+        public frmBonus f5;
 
         public Form1()
         {
@@ -32,15 +32,7 @@ namespace rlzy
         private void 维护员工工资数据ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            foreach (Form x in MdiChildren)
-            {
-                x.Close();
-            }
-            f3 = new frmSalary();
-            f3.MdiParent = this;
-            f3.WindowState = FormWindowState.Maximized;
-            //f3.Parent = panel2;
-            f3.Show();
+
         }
 
         private void 维护考勤数据ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,9 +64,45 @@ namespace rlzy
             f4 = new frmImport();
             f4.MdiParent = this;
             f4.WindowState = FormWindowState.Maximized;
-            //f3.Parent = panel2;
+            //f4.Parent = panel2;
             f4.Show();
 
+        }
+
+        private void 显示考勤数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 导入其他工资ExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 工资运算ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form x in MdiChildren)
+            {
+                x.Close();
+            }
+            f3 = new frmSalary();
+            f3.MdiParent = this;
+            f3.WindowState = FormWindowState.Maximized;
+            //f3.Parent = panel2;
+            f3.Show();
+        }
+
+        private void 奖金运算ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form x in MdiChildren)
+            {
+                x.Close();
+            }
+            f5 = new frmBonus();
+            f5.MdiParent = this;
+            f5.WindowState = FormWindowState.Maximized;
+            //f5.Parent = panel2;
+            f5.Show();
         }
     }
 }

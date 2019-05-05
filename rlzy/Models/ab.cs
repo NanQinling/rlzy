@@ -20,6 +20,7 @@ using System.Text;
 using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 //using MySql.Data.MySqlClient;
 #if NET
 using System.Web;
@@ -48,14 +49,14 @@ namespace ab
                 string s1 = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=";
 #endif
 #if ACCESS_2010
-                string s1 = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=";
+            string s1 = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=";
 #endif
 #if ACCESS
 #if NET
                     string s2 =@HttpContext.Current.Server.MapPath(@"~/data/d1.accdb"); 
 #endif
 #if WIN
-                    string s2 = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)+ @"\data\rlzy.accdb"; 
+            string s2 = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\data\rlzy.accdb";
 #endif
 #endif
 
@@ -146,6 +147,80 @@ namespace ab
                 //return false;
             }
         }
+
+
+
+
+
+
+
+
+
+        static OleDbConnection createConn_ex()
+
+        {
+            string s1 = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=";
+
+            var filePath = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "Excel文件(*.xls,xlsx)|*.xls;*.xlsx|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+                }
+            }
+            string s2 = filePath + ";Extended Properties='Excel 12.0;HDR=YES'";//HDR=YES表示有标题
+            OleDbConnection conn = new OleDbConnection(s1 + s2);
+            return conn;
+
+            //说明：
+            //若要引用完全使用的工作表的范围，请指定后面跟有美元符号的工作表名称。例如： 
+            //select * from [Sheet1$] 
+            //若要引用工作表上的特定地址范围，请指定后面跟有美元符号和该范围的工作表名称。例如： 
+            //select * from [Sheet1$A1:B10]
+            //关于IMEX:
+            //若为 0，则为输出模式，此情况下只能用作写入 Excel； 
+            //若为 1，则为输入模式，此情况下只能用作读取 Excel，并且始终将 Excel 数据作为文本类型读取； 
+            //若为 2，则为连接模式，此情况下既可用作写入、也可用作读取。
+            //所以若要读取混合数据类型，应该将 IMEX 设置为 1；若误设置为 0，则读取不到任何行；若误设置为 2 或省略，则有些数据读取出来是空白。
+            //注意：输出模式对应写入、输入模式对应读取。
+
+
+        }
+
+        public static DataTable get_datatable_ex(string s1)
+        {
+            OleDbConnection myconn = Hc_db.createConn_ex();
+            OleDbDataAdapter myda = new OleDbDataAdapter(s1, myconn);
+            DataSet myds = new DataSet();
+            try
+            {
+                myconn.Open();
+                myda.Fill(myds, "No1");
+                myconn.Close();
+                //myconn.Dispose();
+                return myds.Tables["No1"];
+            }
+            catch (Exception e1)
+            {
+                throw (e1);
+            }
+        }
+
+
+
+
+
+
+
+
 
     }
 }

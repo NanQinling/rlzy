@@ -53,6 +53,8 @@
             this.系统管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.工资运算ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.奖金运算ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,22 +149,23 @@
             // 维护考勤数据ToolStripMenuItem
             // 
             this.维护考勤数据ToolStripMenuItem.Name = "维护考勤数据ToolStripMenuItem";
-            this.维护考勤数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.维护考勤数据ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.维护考勤数据ToolStripMenuItem.Text = "维护考勤数据";
             this.维护考勤数据ToolStripMenuItem.Click += new System.EventHandler(this.维护考勤数据ToolStripMenuItem_Click);
             // 
             // 批量录入考勤数据ToolStripMenuItem
             // 
             this.批量录入考勤数据ToolStripMenuItem.Name = "批量录入考勤数据ToolStripMenuItem";
-            this.批量录入考勤数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.批量录入考勤数据ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.批量录入考勤数据ToolStripMenuItem.Text = "批量录入考勤数据";
             this.批量录入考勤数据ToolStripMenuItem.Click += new System.EventHandler(this.批量录入考勤数据ToolStripMenuItem_Click);
             // 
             // 显示考勤数据ToolStripMenuItem
             // 
             this.显示考勤数据ToolStripMenuItem.Name = "显示考勤数据ToolStripMenuItem";
-            this.显示考勤数据ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.显示考勤数据ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.显示考勤数据ToolStripMenuItem.Text = "显示考勤数据";
+            this.显示考勤数据ToolStripMenuItem.Click += new System.EventHandler(this.显示考勤数据ToolStripMenuItem_Click);
             // 
             // 资金管理ToolStripMenuItem
             // 
@@ -178,9 +181,10 @@
             // 
             this.工资管理ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.维护员工工资数据ToolStripMenuItem,
-            this.导入其他工资ExcelToolStripMenuItem});
+            this.导入其他工资ExcelToolStripMenuItem,
+            this.工资运算ToolStripMenuItem});
             this.工资管理ToolStripMenuItem1.Name = "工资管理ToolStripMenuItem1";
-            this.工资管理ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.工资管理ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.工资管理ToolStripMenuItem1.Text = "工资管理";
             // 
             // 维护员工工资数据ToolStripMenuItem
@@ -195,14 +199,16 @@
             this.导入其他工资ExcelToolStripMenuItem.Name = "导入其他工资ExcelToolStripMenuItem";
             this.导入其他工资ExcelToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.导入其他工资ExcelToolStripMenuItem.Text = "导入其他工资（Excel）";
+            this.导入其他工资ExcelToolStripMenuItem.Click += new System.EventHandler(this.导入其他工资ExcelToolStripMenuItem_Click);
             // 
             // 奖金管理ToolStripMenuItem
             // 
             this.奖金管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.维护员工奖金数据ToolStripMenuItem,
-            this.奖金数据批量导入工资ExcelToolStripMenuItem});
+            this.奖金数据批量导入工资ExcelToolStripMenuItem,
+            this.奖金运算ToolStripMenuItem});
             this.奖金管理ToolStripMenuItem.Name = "奖金管理ToolStripMenuItem";
-            this.奖金管理ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.奖金管理ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.奖金管理ToolStripMenuItem.Text = "奖金管理";
             // 
             // 维护员工奖金数据ToolStripMenuItem
@@ -231,6 +237,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.人员管理ToolStripMenuItem,
             this.考勤管理ToolStripMenuItem,
@@ -245,6 +252,20 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
+            // 
+            // 工资运算ToolStripMenuItem
+            // 
+            this.工资运算ToolStripMenuItem.Name = "工资运算ToolStripMenuItem";
+            this.工资运算ToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.工资运算ToolStripMenuItem.Text = "工资运算";
+            this.工资运算ToolStripMenuItem.Click += new System.EventHandler(this.工资运算ToolStripMenuItem_Click);
+            // 
+            // 奖金运算ToolStripMenuItem
+            // 
+            this.奖金运算ToolStripMenuItem.Name = "奖金运算ToolStripMenuItem";
+            this.奖金运算ToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.奖金运算ToolStripMenuItem.Text = "奖金运算";
+            this.奖金运算ToolStripMenuItem.Click += new System.EventHandler(this.奖金运算ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -291,6 +312,8 @@
         private System.Windows.Forms.ToolStripMenuItem 系统管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 工资运算ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 奖金运算ToolStripMenuItem;
     }
 }
 

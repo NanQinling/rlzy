@@ -72,6 +72,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBonus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBonus.Designer.cs">
+      <DependentUpon>frmBonus.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmImport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +92,14 @@
     </Compile>
     <Compile Include="Models\ab.cs" />
     <Compile Include="Models\ExcelHelper.cs" />
-    <Compile Include="Models\man.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\Salary.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBonus.resx">
+      <DependentUpon>frmBonus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmImport.resx">
       <DependentUpon>frmImport.cs</DependentUpon>
@@ -121,6 +130,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
